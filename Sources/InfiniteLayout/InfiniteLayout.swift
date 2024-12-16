@@ -74,7 +74,7 @@ open class InfiniteLayout: UICollectionViewFlowLayout {
     }
     
     open override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        guard let attributes = super.layoutAttributesForItem(at: indexPath) else {
+        guard let attributes = super.layoutAttributesForItem(at: indexPath), attributes.frame != .zero else {
             return nil
         }
         return self.layoutAttributes(from: attributes, page: currentPage)
