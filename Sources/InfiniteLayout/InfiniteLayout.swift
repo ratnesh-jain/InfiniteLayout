@@ -143,7 +143,7 @@ open class InfiniteLayout: UICollectionViewFlowLayout {
     }
     
     private func layoutAttributes(from layoutAttributes: UICollectionViewLayoutAttributes, page: CGPoint) -> UICollectionViewLayoutAttributes! {
-        guard let attributes = self.copyLayoutAttributes(layoutAttributes) else {
+        guard let attributes = self.copyLayoutAttributes(layoutAttributes), attributes.size != .zero else {
             return nil
         }
         attributes.frame = rect(from: attributes.frame, page: page)
